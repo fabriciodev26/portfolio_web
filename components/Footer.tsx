@@ -18,10 +18,7 @@ export default function Footer() {
           href="https://linkedin.com/in/fabricio-iparraguirre-quintero"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-xs transition-colors duration-200"
-          style={{ color: "#2D3748" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#00FF94")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#2D3748")}
+          className="font-mono text-xs text-[#2D3748] transition-colors duration-200 hover:text-electric"
         >
           LinkedIn →
         </a>

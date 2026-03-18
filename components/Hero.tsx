@@ -13,12 +13,36 @@ export default function Hero() {
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
     setVisible(true);
   }, []);
 
   useEffect(() => {
+    const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+    if (!mq) return;
+    const sync = () => setReduceMotion(mq.matches);
+    sync();
+    // Soporta tanto addEventListener como addListener (Safari más viejo).
+    // eslint-disable-next-line deprecation/deprecation
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+
+    return () => {
+      // eslint-disable-next-line deprecation/deprecation
+      if (mq.removeEventListener) mq.removeEventListener("change", sync);
+      else mq.removeListener(sync);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      // En "menos movimiento", evitamos el loop del tecleado.
+      setDisplayed(roles[0] ?? "");
+      return;
+    }
+
     const current = roles[roleIdx];
     let timeout: ReturnType<typeof setTimeout>;
 
@@ -40,7 +64,7 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayed, isDeleting, roleIdx]);
+  }, [displayed, isDeleting, roleIdx, reduceMotion]);
 
   return (
     <section

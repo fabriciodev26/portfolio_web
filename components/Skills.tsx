@@ -47,6 +47,7 @@ const techLogos = [
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,6 +56,20 @@ export default function Skills() {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+    if (!mq) return;
+    const sync = () => setReduceMotion(mq.matches);
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener("change", sync);
+      else mq.removeListener(sync);
+    };
   }, []);
 
   return (
@@ -148,7 +163,7 @@ export default function Skills() {
           <div
             className="flex gap-8 whitespace-nowrap"
             style={{
-              animation: "marquee 20s linear infinite",
+              animation: reduceMotion ? "none" : "marquee 20s linear infinite",
             }}
           >
             {[...techLogos, ...techLogos].map((tech, i) => (
