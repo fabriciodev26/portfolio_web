@@ -6,7 +6,7 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="font-mono text-xs" style={{ color: "#2D3748" }}>
-          © 2025 Fabricio Iparraguirre — Lima, Perú
+          © 2026 Fabricio Iparraguirre — Lima, Perú
         </div>
         <div className="font-mono text-xs flex items-center gap-2" style={{ color: "#2D3748" }}>
           Hecho con

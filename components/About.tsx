@@ -126,7 +126,7 @@ export default function About() {
                   </div>
                   <div className="pl-4">
                     <span style={{ color: "#6B7280" }}>pasión: </span>
-                    <span style={{ color: "#E8EAED" }}>'interfaces bonitas'</span><span style={{ color: "#8892A4" }}>,</span>
+                    <span style={{ color: "#E8EAED" }}>'interfaces funcionales'</span><span style={{ color: "#8892A4" }}>,</span>
                   </div>
                   <div className="pl-4">
                     <span style={{ color: "#6B7280" }}>café: </span>
