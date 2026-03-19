@@ -159,7 +159,7 @@ export default function Hero() {
               style={{ color: "#6B7280", transitionDelay: "0.45s" }}
             >
               Diseño e implemento interfaces modernas, rápidas y orientadas a la
-              experiencia del usuario. Con más de 1 año de experiencia en React,
+              experiencia del usuario. Con más de 2 años de experiencia en React,
               Next.js, Angular y ecosistemas fullstack.
             </p>
 
@@ -229,7 +229,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
                 <div className="w-3 h-3 rounded-full" style={{ background: "#28CA41" }} />
                 <span className="ml-3 font-mono text-xs" style={{ color: "#4A5568" }}>
-                  fabricio@portfolio ~ profile.json
+                  fabriciodev26@gmail.com ~ profile.json
                 </span>
               </div>
 
@@ -240,16 +240,18 @@ export default function Hero() {
   `}<span style={{ color: "#00FF94" }}>"name"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Fabricio Iparraguirre"</span>{`,
   `}<span style={{ color: "#00FF94" }}>"role"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Frontend Developer"</span>{`,
   `}<span style={{ color: "#00FF94" }}>"location"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Lima, Perú 🇵🇪"</span>{`,
-  `}<span style={{ color: "#00FF94" }}>"experience"</span>{`: `}<span style={{ color: "#F97316" }}>"+1 año"</span>{`,
+  `}<span style={{ color: "#00FF94" }}>"experience"</span>{`: `}<span style={{ color: "#E8EAED" }}>"+2 años"</span>{`,
   `}<span style={{ color: "#00FF94" }}>"stack"</span>{`: [
     `}<span style={{ color: "#E8EAED" }}>"React"</span>{`, `}<span style={{ color: "#E8EAED" }}>"Next.js"</span>{`,
     `}<span style={{ color: "#E8EAED" }}>"Angular"</span>{`, `}<span style={{ color: "#E8EAED" }}>"TypeScript"</span>{`
   ],
   `}<span style={{ color: "#00FF94" }}>"backend"</span>{`: [
-    `}<span style={{ color: "#E8EAED" }}>"NestJS"</span>{`, `}<span style={{ color: "#E8EAED" }}>"Laravel"</span>{`,
+    `}<span style={{ color: "#E8EAED" }}>"NestJS"</span>{`, `}<span style={{ color: "#E8EAED" }}>"Laravel"</span>{`
+  ],
+  `}<span style={{ color: "#00FF94" }}>"database"</span>{`: [
     `}<span style={{ color: "#E8EAED" }}>"PostgreSQL"</span>{`
   ],
-  `}<span style={{ color: "#00FF94" }}>"status"</span>{`: `}<span style={{ color: "#00FF94" }}>"available"</span>{`
+  `}<span style={{ color: "#00FF94" }}>"status"</span>{`: `}<span style={{ color: "#E8EAED" }}>"available"</span>{`
 }`}
                 </pre>
               </div>
