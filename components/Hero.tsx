@@ -119,14 +119,14 @@ export default function Hero() {
               style={{ transitionDelay: "0.2s" }}
             >
               <h1
-                className="font-display text-6xl md:text-7xl lg:text-8xl leading-none mb-2"
+                className="font-display text-6xl md:text-7xl lg:text-6xl leading-none mb-2"
                 style={{ color: "#E8EAED", letterSpacing: "0.02em" }}
                 data-text="FABRICIO"
               >
                 <span className="glitch-text" data-text="FABRICIO">FABRICIO</span>
               </h1>
               <h1
-                className="font-display text-6xl md:text-7xl lg:text-8xl leading-none mb-6"
+                className="font-display text-6xl md:text-7xl lg:text-6xl leading-none mb-6"
                 style={{ color: "#00FF94", letterSpacing: "0.02em" }}
               >
                 IPARRAGUIRRE
