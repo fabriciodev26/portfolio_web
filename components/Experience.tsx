@@ -9,7 +9,7 @@ const experiences = [
     period: "Feb 2026 – Actualmente",
     location: "Lima, Perú",
     type: "Tiempo completo",
-    color: "#00FF94",
+    color: "#007bff",// azul
     highlights: [
       "Optimicé el rendimiento SEO técnico, logrando una mejora significativa en el posicionamiento orgánico.",
       "Realicé análisis detallados de métricas web para alinear las estrategias de marketing con el desarrollo técnico.",
