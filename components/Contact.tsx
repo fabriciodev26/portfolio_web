@@ -17,8 +17,8 @@ const contacts = [
   },
   {
     label: "WhatsApp",
-    value: "+51 945 813 309",
-    href: "https://wa.me/51945813309",
+    value: "+51 942 981 513",
+    href: "https://wa.me/51942981513",
     icon: "◉",
   },
   {
@@ -51,7 +51,7 @@ export default function Contact() {
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs" style={{ color: "#00FF94" }}>04</span>
+            <span className="font-mono text-xs" style={{ color: "#00FF94" }}>05</span>
             <div className="h-px w-8" style={{ background: "#00FF94" }} />
             <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#4A5568" }}>
               Contacto
