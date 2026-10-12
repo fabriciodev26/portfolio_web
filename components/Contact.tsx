@@ -142,16 +142,14 @@ export default function Contact() {
 
             {/* Big decorative text */}
             <div
-              className="mt-12 font-display text-8xl md:text-9xl leading-none select-none"
+              className="mt-12 font-display text-6xl sm:text-7xl md:text-6xl lg:text-8xl xl:text-9xl leading-none select-none"
               style={{
                 color: "transparent",
                 WebkitTextStroke: "1px #1E2530",
                 letterSpacing: "0.02em",
               }}
             >
-              HIRE
-              <br />
-              ME
+              ESCRÍBEME
             </div>
           </div>
 
