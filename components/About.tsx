@@ -80,9 +80,9 @@ export default function About() {
               className="font-display text-5xl md:text-6xl mb-6"
               style={{ color: "#E8EAED", letterSpacing: "0.02em" }}
             >
-              CRAFTING
+              CREANDO
               <br />
-              <span style={{ color: "#00FF94" }}>EXPERIENCES</span>
+              <span style={{ color: "#00FF94" }}>EXPERIENCIAS</span>
             </h2>
 
             <p className="text-base leading-relaxed mb-4" style={{ color: "#8E98A9" }}>
