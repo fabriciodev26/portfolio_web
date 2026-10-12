@@ -8,6 +8,18 @@ const roles = [
   "Frontend Developer",
 ];
 
+const profile: { key: string; value: string | string[] }[] = [
+  { key: "name", value: "Fabricio Iparraguirre" },
+  { key: "role", value: "Frontend Developer" },
+  { key: "location", value: "Lima, Perú 🇵🇪" },
+  { key: "experience", value: "+2 años" },
+  { key: "stack", value: ["Next.js", "React", "TypeScript", "Angular"] },
+  { key: "backend", value: ["NestJS", "Prisma", "Laravel"] },
+  { key: "database", value: ["PostgreSQL", "Supabase"] },
+  { key: "automation", value: ["n8n", "Sanity", "APIs"] },
+  { key: "status", value: "available" },
+];
+
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -73,11 +85,11 @@ export default function Hero() {
     >
       {/* Background decorative elements */}
       <div
-        className="absolute top-1/4 right-10 w-px h-40 opacity-30"
+        className="absolute top-1/4 right-10 w-px h-40 opacity-30" data-parallax="0.25"
         style={{ background: "linear-gradient(to bottom, transparent, #00FF94, transparent)" }}
       />
       <div
-        className="absolute bottom-1/4 left-10 w-px h-40 opacity-30"
+        className="absolute bottom-1/4 left-10 w-px h-40 opacity-30" data-parallax="-0.2"
         style={{ background: "linear-gradient(to bottom, transparent, #00FF94, transparent)" }}
       />
 
@@ -95,7 +107,7 @@ export default function Hero() {
         <div className="w-8 h-8" style={{ border: "1px solid #00FF94", borderLeft: "none", borderTop: "none" }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-32 w-full">
+      <div className="max-w-6xl mx-auto px-6 py-32 w-full" data-hero-scroll>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div>
@@ -140,13 +152,13 @@ export default function Hero() {
             >
               <span
                 className="font-mono text-base md:text-lg"
-                style={{ color: "#4A5568" }}
+                style={{ color: "#7A8599" }}
               >
                 &gt;_
               </span>
               <span
                 className="font-mono text-base md:text-lg"
-                style={{ color: "#8892A4" }}
+                style={{ color: "#A0AABA" }}
               >
                 {displayed}
                 <span className="terminal-cursor">|</span>
@@ -156,11 +168,11 @@ export default function Hero() {
             {/* Description */}
             <p
               className={`text-base leading-relaxed mb-10 max-w-lg transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ color: "#6B7280", transitionDelay: "0.45s" }}
+              style={{ color: "#8E98A9", transitionDelay: "0.45s" }}
             >
-              Diseño e implemento interfaces modernas, rápidas y orientadas a la
-              experiencia del usuario. Con más de 2 años de experiencia en React,
-              Next.js, Angular y ecosistemas fullstack.
+              Diseño e implemento interfaces modernas y rápidas, y construyo el
+              backend, las integraciones y las automatizaciones que las sostienen.
+              Más de 2 años con React, Next.js, NestJS y ecosistemas full-stack.
             </p>
 
             {/* CTA Buttons */}
@@ -191,7 +203,7 @@ export default function Hero() {
                 className="px-6 py-3 rounded font-mono text-sm transition-all duration-300"
                 style={{
                   border: "1px solid #1E2530",
-                  color: "#8892A4",
+                  color: "#A0AABA",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(0,255,148,0.4)";
@@ -199,7 +211,7 @@ export default function Hero() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "#1E2530";
-                  e.currentTarget.style.color = "#8892A4";
+                  e.currentTarget.style.color = "#A0AABA";
                 }}
               >
                 Contáctame
@@ -228,31 +240,39 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
                 <div className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
                 <div className="w-3 h-3 rounded-full" style={{ background: "#28CA41" }} />
-                <span className="ml-3 font-mono text-xs" style={{ color: "#4A5568" }}>
+                <span className="ml-3 font-mono text-xs" style={{ color: "#7A8599" }}>
                   fabriciodev26@gmail.com ~ profile.json
                 </span>
               </div>
 
               {/* Terminal body */}
-              <div className="p-6 font-mono text-sm leading-relaxed" style={{ color: "#8892A4" }}>
+              <div className="p-6 font-mono text-sm leading-relaxed" style={{ color: "#A0AABA" }}>
                 <pre style={{ whiteSpace: "pre-wrap" }}>
-                  {`{
-  `}<span style={{ color: "#00FF94" }}>"name"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Fabricio Iparraguirre"</span>{`,
-  `}<span style={{ color: "#00FF94" }}>"role"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Frontend Developer"</span>{`,
-  `}<span style={{ color: "#00FF94" }}>"location"</span>{`: `}<span style={{ color: "#E8EAED" }}>"Lima, Perú 🇵🇪"</span>{`,
-  `}<span style={{ color: "#00FF94" }}>"experience"</span>{`: `}<span style={{ color: "#E8EAED" }}>"+2 años"</span>{`,
-  `}<span style={{ color: "#00FF94" }}>"stack"</span>{`: [
-    `}<span style={{ color: "#E8EAED" }}>"React"</span>{`, `}<span style={{ color: "#E8EAED" }}>"Next.js"</span>{`,
-    `}<span style={{ color: "#E8EAED" }}>"Angular"</span>{`, `}<span style={{ color: "#E8EAED" }}>"TypeScript"</span>{`
-  ],
-  `}<span style={{ color: "#00FF94" }}>"backend"</span>{`: [
-    `}<span style={{ color: "#E8EAED" }}>"NestJS"</span>{`, `}<span style={{ color: "#E8EAED" }}>"Laravel"</span>{`
-  ],
-  `}<span style={{ color: "#00FF94" }}>"database"</span>{`: [
-    `}<span style={{ color: "#E8EAED" }}>"PostgreSQL"</span>{`
-  ],
-  `}<span style={{ color: "#00FF94" }}>"status"</span>{`: `}<span style={{ color: "#E8EAED" }}>"available"</span>{`
-}`}
+                  {"{\n"}
+                  {profile.map((f, i) => (
+                    <span key={f.key}>
+                      {"  "}
+                      <span style={{ color: "#00FF94" }}>{`"${f.key}"`}</span>
+                      {": "}
+                      {Array.isArray(f.value) ? (
+                        <>
+                          {`[\n    `}
+                          {f.value.map((v, j) => (
+                            <span key={v}>
+                              <span style={{ color: "#E8EAED" }}>{`"${v}"`}</span>
+                              {j < f.value.length - 1 ? ", " : ""}
+                            </span>
+                          ))}
+                          {`\n  ]`}
+                        </>
+                      ) : (
+                        <span style={{ color: "#E8EAED" }}>{`"${f.value}"`}</span>
+                      )}
+                      {i < profile.length - 1 ? "," : ""}
+                      {`\n`}
+                    </span>
+                  ))}
+                  {"}"}
                 </pre>
               </div>
             </div>
@@ -261,7 +281,7 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-3 mt-4">
               {[
                 { num: "+2", label: "Año exp." },
-                { num: "5+", label: "Proyectos Internos" },
+                { num: "10+", label: "Proyectos" },
                 { num: "3", label: "Empresas" },
               ].map((stat) => (
                 <div
@@ -275,7 +295,7 @@ export default function Hero() {
                   <div className="font-display text-2xl" style={{ color: "#00FF94" }}>
                     {stat.num}
                   </div>
-                  <div className="font-mono text-xs mt-0.5" style={{ color: "#4A5568" }}>
+                  <div className="font-mono text-xs mt-0.5" style={{ color: "#7A8599" }}>
                     {stat.label}
                   </div>
                 </div>
@@ -287,7 +307,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          style={{ color: "#2D3748" }}
+          style={{ color: "#7A8599" }}
         >
           <span className="font-mono text-xs">scroll</span>
           <div

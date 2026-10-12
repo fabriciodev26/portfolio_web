@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
           <span
             className="font-mono text-sm hidden sm:block"
-            style={{ color: "#4A5568" }}
+            style={{ color: "#7A8599" }}
           >
             fabricio.dev
           </span>
@@ -74,12 +74,12 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="animated-underline text-sm font-body transition-colors duration-200"
-              style={{ color: "#8892A4" }}
+              style={{ color: "#A0AABA" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "#E8EAED")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#8892A4")
+                (e.currentTarget.style.color = "#A0AABA")
               }
             >
               {link.label}
@@ -147,7 +147,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="text-sm py-2"
-              style={{ color: "#8892A4", borderBottom: "1px solid #1E2530" }}
+              style={{ color: "#A0AABA", borderBottom: "1px solid #1E2530" }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
