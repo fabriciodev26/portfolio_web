@@ -36,6 +36,14 @@ const projects: Project[] = [
     ],
   },
   {
+    name: "Tienda InSalud",
+    description:
+      "E-commerce de servicios y vacunas con cita: carrito, checkout con pagos Culqi (tarjeta y Yape), reembolsos y panel administrativo con métricas de ventas.",
+    href: "https://tienda.insalud.pe/",
+    tags: ["Next.js", "Culqi", "Prisma", "Panel admin"],
+    color: "#FACC15",
+  },
+  {
     name: "SyfCode",
     description:
       "Sitio de agencia web propia: landings, sitios corporativos y e-commerce enfocados en conversión.",

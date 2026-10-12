@@ -5,20 +5,18 @@ export default function Footer() {
       style={{ borderTop: "1px solid #1E2530" }}
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="font-mono text-xs" style={{ color: "#7A8599" }}>
+        <div className="font-mono text-xs" style={{ color: "#A0AABA" }}>
           © 2026 Fabricio Iparraguirre — Lima, Perú
         </div>
-        <div className="font-mono text-xs flex items-center gap-2" style={{ color: "#7A8599" }}>
-          Hecho con
-          <span style={{ color: "#00FF94" }}>Next.js</span>
-          &
-          <span style={{ color: "#00FF94" }}>❤</span>
+        <div className="font-mono text-xs flex items-center gap-2" style={{ color: "#A0AABA" }}>
+          Hecho por
+          <span style={{ color: "#00FF94" }}>fabriciodev26</span>
         </div>
         <a
           href="https://linkedin.com/in/fabricio-iparraguirre-quintero"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-xs text-[#7A8599] transition-colors duration-200 hover:text-electric"
+          className="font-mono text-xs text-[#A0AABA] transition-colors duration-200 hover:text-electric"
         >
           LinkedIn →
         </a>
