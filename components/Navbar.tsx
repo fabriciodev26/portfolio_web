@@ -92,20 +92,21 @@ export default function Navbar() {
           href="mailto:fabriciodev26@gmail.com"
           className="hidden md:flex items-center gap-2 px-4 py-2 rounded text-sm font-mono transition-all duration-300"
           style={{
-            border: "1px solid rgba(0,255,148,0.4)",
-            color: "#00FF94",
-            background: "rgba(0,255,148,0.05)",
+            border: "1px solid #00FF94",
+            color: "#080B0F",
+            background: "#00FF94",
+            fontWeight: 600,
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(0,255,148,0.12)";
-            e.currentTarget.style.boxShadow = "0 0 20px rgba(0,255,148,0.15)";
+            e.currentTarget.style.boxShadow = "0 0 24px rgba(0,255,148,0.45)";
+            e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(0,255,148,0.05)";
             e.currentTarget.style.boxShadow = "none";
+            e.currentTarget.style.transform = "none";
           }}
         >
-          Contrátame
+          Trabajemos juntos
         </a>
 
         {/* Mobile menu button */}
