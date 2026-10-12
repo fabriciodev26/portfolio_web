@@ -34,7 +34,8 @@ export default function ScrollEffects() {
       }
 
       if (heroEl) {
-        const p = Math.min(Math.max(y / (vh * 0.9), 0), 1);
+        // El Hero se ve completo hasta ~25% de pantalla; luego se desvanece.
+        const p = Math.min(Math.max((y - vh * 0.25) / (vh * 0.65), 0), 1);
         heroEl.style.opacity = String(1 - p * 0.85);
         heroEl.style.translate = `0 ${p * -60}px`;
       }
