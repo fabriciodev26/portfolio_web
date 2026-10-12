@@ -2,6 +2,36 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Tok = [string, string];
+
+const C = {
+  kw: "#A0AABA",
+  key: "#8E98A9",
+  str: "#E8EAED",
+  acc: "#00FF94",
+  num: "#F97316",
+  typ: "#4DA3FF",
+  cm: "#3F4A5A",
+};
+
+const codeLines: { indent: number; tokens: Tok[] }[] = [
+  { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw], ["git log --oneline --career", C.str]] },
+  { indent: 0, tokens: [["a1f9c2e ", C.num], ["(HEAD) ", C.typ], ["Insalud", C.acc], [" · Feb 2026 → hoy", C.kw]] },
+  { indent: 0, tokens: [["        plataformas, e-commerce, automatización y SEO", C.key]] },
+  { indent: 0, tokens: [["7b3d4e1 ", C.num], ["Maxillaris", C.acc], [" · Feb → Nov 2025", C.kw]] },
+  { indent: 0, tokens: [["        interfaces React/Angular y microservicios NestJS", C.key]] },
+  { indent: 0, tokens: [["c04e8a9 ", C.num], ["EvoxLab", C.acc], [" · Sep 2024 → Ene 2025", C.kw]] },
+  { indent: 0, tokens: [["        apps Laravel + React con Inertia.js", C.key]] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw], ["whoami", C.str]] },
+  { indent: 0, tokens: [["Ingeniería de Software · UPC", C.key]] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw], ["stack --now", C.str]] },
+  { indent: 0, tokens: [["Next.js · NestJS · Prisma · PostgreSQL · n8n", C.key]] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw]] },
+];
+
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -40,12 +70,13 @@ export default function About() {
                 01
               </span>
               <div className="h-px w-8" style={{ background: "#00FF94" }} />
-              <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#4A5568" }}>
+              <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#7A8599" }}>
                 Sobre mí
               </span>
             </div>
 
             <h2
+              data-parallax="0.05"
               className="font-display text-5xl md:text-6xl mb-6"
               style={{ color: "#E8EAED", letterSpacing: "0.02em" }}
             >
@@ -54,15 +85,16 @@ export default function About() {
               <span style={{ color: "#00FF94" }}>EXPERIENCES</span>
             </h2>
 
-            <p className="text-base leading-relaxed mb-4" style={{ color: "#6B7280" }}>
-              Soy un desarrollador frontend apasionado por construir interfaces
-              que no solo se ven bien, sino que <em style={{ color: "#8892A4", fontStyle: "normal" }}>funcionan excepcionalmente</em>.
-              Combino diseño, rendimiento y experiencia de usuario en cada línea de código.
+            <p className="text-base leading-relaxed mb-4" style={{ color: "#8E98A9" }}>
+              Soy desarrollador frontend con mentalidad full-stack: construyo interfaces
+              que no solo se ven bien, sino que <em style={{ color: "#A0AABA", fontStyle: "normal" }}>funcionan excepcionalmente</em>,
+              y el backend, las integraciones y las automatizaciones que las sostienen.
             </p>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#6B7280" }}>
-              Estudié Ingeniería de Software en la UPC y desde entonces he trabajado
-              en proyectos para sectores como odontología y plataformas web complejas,
-              desarrollando soluciones con impacto real.
+            <p className="text-base leading-relaxed mb-8" style={{ color: "#8E98A9" }}>
+              Estudié Ingeniería de Software en la UPC. Hoy, en Insalud, desarrollo
+              plataformas web, e-commerce y herramientas internas, automatizo procesos
+              con n8n e IA y optimizo SEO y Core Web Vitals. Antes pasé por Maxillaris
+              y EvoxLab, siempre con foco en soluciones de impacto real.
             </p>
 
             {/* Traits */}
@@ -86,7 +118,7 @@ export default function About() {
                   }}
                 >
                   <span style={{ fontSize: "16px" }}>{t.icon}</span>
-                  <span className="text-sm" style={{ color: "#8892A4" }}>{t.label}</span>
+                  <span className="text-sm" style={{ color: "#A0AABA" }}>{t.label}</span>
                 </div>
               ))}
             </div>
@@ -100,57 +132,71 @@ export default function About() {
               transform: visible ? "translateX(0)" : "translateX(30px)",
             }}
           >
-            <div className="relative">
-              {/* Main card */}
+            <div className="relative" data-parallax="-0.06">
+              {/* Main card — editor */}
+              <style>{`
+                @keyframes caret-blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+                .caret-blink { animation: caret-blink 1.1s steps(1) infinite; }
+                @media (prefers-reduced-motion: reduce) { .caret-blink { animation: none; } }
+              `}</style>
               <div
-                className="rounded-lg p-8"
+                className="rounded-lg overflow-hidden"
                 style={{
                   background: "#0F1318",
                   border: "1px solid #1E2530",
+                  boxShadow: "0 24px 60px -20px rgba(0,255,148,0.12)",
                 }}
               >
-                {/* Code snippet visual */}
-                <div className="font-mono text-sm leading-8" style={{ color: "#4A5568" }}>
-                  <div>
-                    <span style={{ color: "#8892A4" }}>const </span>
-                    <span style={{ color: "#00FF94" }}>developer</span>
-                    <span style={{ color: "#8892A4" }}> = {"{"}</span>
-                  </div>
-                  <div className="pl-4">
-                    <span style={{ color: "#6B7280" }}>nombre: </span>
-                    <span style={{ color: "#E8EAED" }}>'Fabricio'</span><span style={{ color: "#8892A4" }}>,</span>
-                  </div>
-                  <div className="pl-4">
-                    <span style={{ color: "#6B7280" }}>enfoque: </span>
-                    <span style={{ color: "#E8EAED" }}>'Frontend + UX'</span><span style={{ color: "#8892A4" }}>,</span>
-                  </div>
-                  <div className="pl-4">
-                    <span style={{ color: "#6B7280" }}>pasión: </span>
-                    <span style={{ color: "#E8EAED" }}>'interfaces funcionales'</span><span style={{ color: "#8892A4" }}>,</span>
-                  </div>
-                  <div className="pl-4">
-                    <span style={{ color: "#6B7280" }}>café: </span>
-                    <span style={{ color: "#F97316" }}>true</span>
-                  </div>
-                  <div>
-                    <span style={{ color: "#8892A4" }}>{"}"}</span>
-                  </div>
+                {/* Window bar */}
+                <div
+                  className="flex items-center gap-2 px-4 py-3"
+                  style={{ background: "#0B0F14", borderBottom: "1px solid #1E2530" }}
+                >
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#FEBC2E" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#28C840" }} />
+                  <span className="ml-3 font-mono text-xs" style={{ color: "#7A8599" }}>
+                    fabricio — zsh
+                  </span>
+                </div>
 
-                  <div className="mt-4">
-                    <span style={{ color: "#8892A4" }}>function </span>
-                    <span style={{ color: "#00FF94" }}>build</span>
-                    <span style={{ color: "#8892A4" }}>(idea) {"{"}</span>
-                  </div>
-                  <div className="pl-4">
-                    <span style={{ color: "#8892A4" }}>return </span>
-                    <span style={{ color: "#E8EAED" }}>pixel</span>
-                    <span style={{ color: "#8892A4" }}>.</span>
-                    <span style={{ color: "#00FF94" }}>perfect</span>
-                    <span style={{ color: "#8892A4" }}>(idea)</span>
-                  </div>
-                  <div>
-                    <span style={{ color: "#8892A4" }}>{"}"}</span>
-                  </div>
+                {/* Code */}
+                <div className="px-5 py-6 font-mono text-[13px] md:text-sm leading-7 overflow-x-auto" aria-hidden="true">
+                  {codeLines.map((line, i) => (
+                    <div
+                      key={i}
+                      className="flex whitespace-pre"
+                      style={{
+                        opacity: visible ? 1 : 0,
+                        transform: visible ? "translateY(0)" : "translateY(6px)",
+                        transition: "opacity 0.4s ease, transform 0.4s ease",
+                        transitionDelay: `${0.4 + i * 0.06}s`,
+                      }}
+                    >
+                      <span style={{ paddingLeft: `${line.indent * 1.25}rem` }}>
+                        {line.tokens.length === 0
+                          ? " "
+                          : line.tokens.map(([text, color], j) => (
+                              <span key={j} style={{ color }}>{text}</span>
+                            ))}
+                        {i === codeLines.length - 1 && (
+                          <span
+                            className="caret-blink inline-block align-middle ml-1"
+                            style={{ width: "8px", height: "16px", background: C.acc }}
+                          />
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Status bar */}
+                <div
+                  className="flex items-center justify-between px-4 py-2 font-mono text-[11px]"
+                  style={{ background: "#0B0F14", borderTop: "1px solid #1E2530", color: "#7A8599" }}
+                >
+                  <span style={{ color: C.acc }}>● online</span>
+                  <span>UTF-8 · Lima, PE</span>
                 </div>
               </div>
 

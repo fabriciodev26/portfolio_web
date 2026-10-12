@@ -53,11 +53,11 @@ export default function Contact() {
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs" style={{ color: "#00FF94" }}>05</span>
             <div className="h-px w-8" style={{ background: "#00FF94" }} />
-            <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#4A5568" }}>
+            <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#7A8599" }}>
               Contacto
             </span>
           </div>
-          <h2 className="font-display text-5xl md:text-6xl" style={{ color: "#E8EAED", letterSpacing: "0.02em" }}>
+          <h2 data-parallax="0.05" className="font-display text-5xl md:text-6xl" style={{ color: "#E8EAED", letterSpacing: "0.02em" }}>
             HABLEMOS
             <br />
             <span style={{ color: "#00FF94" }}>JUNTOS</span>
@@ -74,7 +74,7 @@ export default function Contact() {
               transitionDelay: "0.2s",
             }}
           >
-            <p className="text-lg leading-relaxed mb-8" style={{ color: "#6B7280" }}>
+            <p className="text-lg leading-relaxed mb-8" style={{ color: "#8E98A9" }}>
               ¿Tienes un proyecto en mente? Estoy disponible para roles fulltime,
               freelance o colaboraciones. Me encanta trabajar en productos que importen.
             </p>
@@ -150,16 +150,16 @@ export default function Contact() {
                   {c.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-mono text-xs mb-0.5" style={{ color: "#4A5568" }}>
+                  <div className="font-mono text-xs mb-0.5" style={{ color: "#7A8599" }}>
                     {c.label}
                   </div>
-                  <div className="font-body text-sm truncate" style={{ color: "#8892A4" }}>
+                  <div className="font-body text-sm truncate" style={{ color: "#A0AABA" }}>
                     {c.value}
                   </div>
                 </div>
                 <span
                   className="font-mono text-sm transition-transform duration-300"
-                  style={{ color: "#2D3748" }}
+                  style={{ color: "#7A8599" }}
                 >
                   →
                 </span>

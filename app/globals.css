@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+/* Tailwind v4 no lee tailwind.config.ts por sí solo: lo enlazamos para que
+   font-display (Bebas Neue), font-mono (JetBrains Mono), los colores y las
+   animaciones personalizadas (float, etc.) funcionen. */
+@config "../tailwind.config.ts";
+
 :root {
   --electric: #00FF94;
   --dark: #080B0F;
