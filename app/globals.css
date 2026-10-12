@@ -23,6 +23,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Evita scroll horizontal en móvil por animaciones de entrada (translateX)
+   y elementos decorativos. "clip" no crea contenedor de scroll. */
+section {
+  overflow-x: clip;
+}
+
+/* Los hijos de un grid no deben ser más anchos que su columna: sin esto,
+   textos largos (emails, URLs) ensanchan la columna y se salen en móvil. */
+.grid > * {
+  min-width: 0;
+}
+
 body {
   background-color: #080B0F;
   color: #E8EAED;
