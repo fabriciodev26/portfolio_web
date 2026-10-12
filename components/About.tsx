@@ -17,11 +17,11 @@ const C = {
 const codeLines: { indent: number; tokens: Tok[] }[] = [
   { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw], ["git log --oneline --career", C.str]] },
   { indent: 0, tokens: [["a1f9c2e ", C.num], ["(HEAD) ", C.typ], ["Insalud", C.acc], [" · Feb 2026 → hoy", C.kw]] },
-  { indent: 0, tokens: [["        plataformas, e-commerce, automatización y SEO", C.key]] },
+  { indent: 8, tokens: [["plataformas, e-commerce, automatización y SEO", C.key]] },
   { indent: 0, tokens: [["7b3d4e1 ", C.num], ["Maxillaris", C.acc], [" · Feb → Nov 2025", C.kw]] },
-  { indent: 0, tokens: [["        interfaces React/Angular y microservicios NestJS", C.key]] },
+  { indent: 8, tokens: [["interfaces React/Angular y microservicios NestJS", C.key]] },
   { indent: 0, tokens: [["c04e8a9 ", C.num], ["EvoxLab", C.acc], [" · Sep 2024 → Ene 2025", C.kw]] },
-  { indent: 0, tokens: [["        apps Laravel + React con Inertia.js", C.key]] },
+  { indent: 8, tokens: [["apps Laravel + React con Inertia.js", C.key]] },
   { indent: 0, tokens: [] },
   { indent: 0, tokens: [["fabricio", C.acc], ["@lima ", C.kw], ["~ ", C.typ], ["$ ", C.kw], ["whoami", C.str]] },
   { indent: 0, tokens: [["Ingeniería de Software · UPC", C.key]] },
@@ -55,10 +55,10 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32" ref={ref}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Left */}
           <div
-            className="transition-all duration-700"
+            className="min-w-0 transition-all duration-700"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateX(0)" : "translateX(-30px)",
@@ -126,7 +126,7 @@ export default function About() {
 
           {/* Right — Visual element */}
           <div
-            className="transition-all duration-700 delay-300"
+            className="min-w-0 transition-all duration-700 delay-300"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateX(0)" : "translateX(30px)",
@@ -165,7 +165,7 @@ export default function About() {
                   {codeLines.map((line, i) => (
                     <div
                       key={i}
-                      className="flex whitespace-pre"
+                      className="flex whitespace-pre-wrap break-words"
                       style={{
                         opacity: visible ? 1 : 0,
                         transform: visible ? "translateY(0)" : "translateY(6px)",
@@ -173,7 +173,7 @@ export default function About() {
                         transitionDelay: `${0.4 + i * 0.06}s`,
                       }}
                     >
-                      <span style={{ paddingLeft: `${line.indent * 1.25}rem` }}>
+                      <span className="min-w-0" style={{ paddingLeft: `${line.indent}ch` }}>
                         {line.tokens.length === 0
                           ? " "
                           : line.tokens.map(([text, color], j) => (
@@ -202,7 +202,7 @@ export default function About() {
 
               {/* Floating badge */}
               <div
-                className="absolute -top-4 -right-4 px-4 py-2 rounded font-mono text-xs"
+                className="absolute -top-4 right-2 md:-right-4 px-4 py-2 rounded font-mono text-xs"
                 style={{
                   background: "#00FF94",
                   color: "#080B0F",
