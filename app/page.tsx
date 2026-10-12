@@ -7,12 +7,14 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
+import ScrollEffects from "@/components/ScrollEffects";
 
 export default function Home() {
   return (
     <main className="relative noise grid-bg min-h-screen">
       {/* Ambient cursor glow */}
       <CursorGlow />
+      <ScrollEffects />
 
       {/* Top ambient gradient */}
       <div

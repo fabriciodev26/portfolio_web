@@ -9,8 +9,9 @@ const skillCategories = [
     skills: [
       { name: "React / Next.js", level: 92 },
       { name: "Angular", level: 80 },
-      { name: "TypeScript", level: 85 },
+      { name: "TypeScript", level: 88 },
       { name: "HTML / CSS", level: 95 },
+      { name: "Tailwind CSS", level: 90 },
       { name: "Astro", level: 70 },
     ],
   },
@@ -18,11 +19,13 @@ const skillCategories = [
     title: "Backend & DB",
     icon: "◇",
     skills: [
-      { name: "NestJS", level: 72 },
+      { name: "NestJS", level: 78 },
       { name: "Laravel / PHP", level: 80 },
-      { name: "PostgreSQL", level: 75 },
+      { name: "PostgreSQL", level: 78 },
+      { name: "Prisma ORM", level: 80 },
       { name: "MySQL", level: 70 },
       { name: "MongoDB", level: 65 },
+      { name: "Supabase", level: 70 },
     ],
   },
   {
@@ -30,18 +33,19 @@ const skillCategories = [
     icon: "◉",
     skills: [
       { name: "Git", level: 88 },
-      { name: "Vite", level: 85 },
       { name: "REST APIs", level: 90 },
-      { name: "Inertia.js", level: 75 },
-      { name: "Office / Excel", level: 80 },
+      { name: "n8n (automatización)", level: 80 },
+      { name: "Sanity CMS", level: 78 },
+      { name: "SEO / Analytics", level: 85 },
+      { name: "AWS / Docker", level: 65 },
     ],
   },
 ];
 
 const techLogos = [
-  "React", "Next.js", "Angular", "TypeScript", "Astro",
-  "NestJS", "Laravel", "PostgreSQL", "MySQL", "MongoDB",
-  "Git", "Vite", "PHP", "JavaScript", "Tailwind",
+  "React", "Next.js", "Angular", "TypeScript", "Astro", "Tailwind",
+  "NestJS", "Laravel", "PHP", "PostgreSQL", "Prisma", "MySQL", "MongoDB",
+  "Git", "Vite", "JavaScript", "Sanity", "n8n", "Supabase", "AWS", "Docker",
 ];
 
 export default function Skills() {
@@ -83,11 +87,11 @@ export default function Skills() {
           <div className="flex items-center gap-3 mb-4">
             <span className="font-mono text-xs" style={{ color: "#00FF94" }}>03</span>
             <div className="h-px w-8" style={{ background: "#00FF94" }} />
-            <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#4A5568" }}>
+            <span className="font-mono text-xs uppercase tracking-widest" style={{ color: "#7A8599" }}>
               Habilidades
             </span>
           </div>
-          <h2 className="font-display text-5xl md:text-6xl" style={{ color: "#E8EAED", letterSpacing: "0.02em" }}>
+          <h2 data-parallax="0.05" className="font-display text-5xl md:text-6xl" style={{ color: "#E8EAED", letterSpacing: "0.02em" }}>
             MI STACK
             <br />
             <span style={{ color: "#00FF94" }}>TÉCNICO</span>
@@ -120,10 +124,10 @@ export default function Skills() {
                 {cat.skills.map((skill, si) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-1.5">
-                      <span className="font-mono text-xs" style={{ color: "#8892A4" }}>
+                      <span className="font-mono text-xs" style={{ color: "#A0AABA" }}>
                         {skill.name}
                       </span>
-                      <span className="font-mono text-xs" style={{ color: "#4A5568" }}>
+                      <span className="font-mono text-xs" style={{ color: "#7A8599" }}>
                         {skill.level}%
                       </span>
                     </div>
@@ -170,7 +174,7 @@ export default function Skills() {
               <span
                 key={`${tech}-${i}`}
                 className="font-mono text-sm flex-shrink-0 flex items-center gap-2"
-                style={{ color: "#4A5568" }}
+                style={{ color: "#7A8599" }}
               >
                 <span style={{ color: "#1E2530" }}>◆</span>
                 {tech}
@@ -211,7 +215,7 @@ export default function Skills() {
               <div className="font-body text-base" style={{ color: "#E8EAED" }}>
                 Introduction to MongoDB — MongoDB University
               </div>
-              <div className="font-mono text-xs mt-1" style={{ color: "#4A5568" }}>
+              <div className="font-mono text-xs mt-1" style={{ color: "#7A8599" }}>
                 Marzo 2021 – Mayo 2021
               </div>
             </div>
