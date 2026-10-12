@@ -240,7 +240,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
                 <div className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
                 <div className="w-3 h-3 rounded-full" style={{ background: "#28CA41" }} />
-                <span className="ml-3 font-mono text-xs" style={{ color: "#7A8599" }}>
+                <span className="ml-3 font-mono text-xs" style={{ color: "#C2CAD6" }}>
                   fabriciodev26@gmail.com ~ profile.json
                 </span>
               </div>
@@ -288,14 +288,14 @@ export default function Hero() {
                   key={stat.label}
                   className="text-center py-3 rounded"
                   style={{
-                    background: "rgba(0,255,148,0.04)",
-                    border: "1px solid #1E2530",
+                    background: "rgba(0,255,148,0.08)",
+                    border: "1px solid rgba(0,255,148,0.28)",
                   }}
                 >
                   <div className="font-display text-2xl" style={{ color: "#00FF94" }}>
                     {stat.num}
                   </div>
-                  <div className="font-mono text-xs mt-0.5" style={{ color: "#7A8599" }}>
+                  <div className="font-mono text-xs mt-0.5" style={{ color: "#C2CAD6" }}>
                     {stat.label}
                   </div>
                 </div>
