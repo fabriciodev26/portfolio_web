@@ -47,7 +47,7 @@ const projects: Project[] = [
     name: "SyfCode",
     description:
       "Sitio de agencia web propia: landings, sitios corporativos y e-commerce enfocados en conversión.",
-    href: "https://syfcode.com/",
+    href: "https://syfcode.pages.dev/",
     tags: ["Agencia", "Next.js", "UI/UX"],
     color: "#A78BFA",
   },
