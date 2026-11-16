@@ -10,6 +10,7 @@ type Project = {
   tags: string[];
   color: string;
   links?: SiteLink[];
+  image?: { src: string; alt: string; width: number; height: number };
 };
 
 const projects: Project[] = [
@@ -66,6 +67,20 @@ const projects: Project[] = [
     href: "https://bienestar-comunidad-mocha.vercel.app/",
     tags: ["React", "Accesibilidad", "Responsive"],
     color: "#00C97A",
+  },
+  {
+    name: "Hopdeck",
+    description:
+      "Herramienta open source de línea de comandos para Claude Code: muestra todos tus proyectos y conversaciones en una sola pantalla, con vista previa y búsqueda, para saltar entre ellos sin hacer cd. Paquete npm, proyecto independiente.",
+    href: "https://github.com/fabriciodev26/hopdeck",
+    tags: ["Node.js", "CLI", "Open source", "npm"],
+    color: "#38BDF8",
+    image: {
+      src: "/projects/hopdeck.svg",
+      alt: "Hopdeck en la terminal: lista de proyectos a la izquierda y la conversación de Claude Code a la derecha",
+      width: 1148,
+      height: 546,
+    },
   },
 ];
 
@@ -194,7 +209,9 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => {
             const common = {
-              className: "group rounded-lg p-6 card-hover transition-all duration-700 flex flex-col text-left w-full",
+              className: `group rounded-lg p-6 card-hover transition-all duration-700 flex flex-col text-left w-full ${
+                p.image ? "md:col-span-2 lg:col-span-3 md:flex-row md:items-center gap-8" : ""
+              }`,
               style: {
                 background: "#0F1318",
                 border: "1px solid #1E2530",
@@ -210,7 +227,7 @@ export default function Projects() {
               },
             };
 
-            const inner = (
+            const body = (
               <>
                 {/* Card header */}
                 <div className="flex items-start justify-between gap-3 mb-4">
@@ -256,6 +273,26 @@ export default function Projects() {
                   ))}
                 </div>
               </>
+            );
+
+            const featured = !!p.image;
+            const inner = featured ? (
+              <>
+                <div className="flex flex-col flex-1 min-w-0">{body}</div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.image!.src}
+                  alt={p.image!.alt}
+                  width={p.image!.width}
+                  height={p.image!.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full md:w-3/5 h-auto rounded self-center"
+                  style={{ border: "1px solid #1E2530" }}
+                />
+              </>
+            ) : (
+              body
             );
 
             return p.links ? (

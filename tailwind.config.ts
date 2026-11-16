@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Bebas Neue'", "cursive"],
-        body: ["'DM Sans'", "sans-serif"],
-        mono: ["'JetBrains Mono'", "monospace"],
+        display: ["var(--font-display)", "'Bebas Neue'", "cursive"],
+        body: ["var(--font-body)", "'DM Sans'", "sans-serif"],
+        mono: ["var(--font-mono)", "'JetBrains Mono'", "monospace"],
       },
       colors: {
         electric: "#00FF94",
