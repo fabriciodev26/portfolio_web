@@ -24,12 +24,7 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [visible, setVisible] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    setVisible(true);
-  }, []);
 
   useEffect(() => {
     const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
@@ -107,18 +102,18 @@ export default function Hero() {
         <div className="w-8 h-8" style={{ border: "1px solid #00FF94", borderLeft: "none", borderTop: "none" }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-32 w-full" data-hero-scroll>
+      <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full" data-hero-scroll>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div>
             {/* Status badge */}
             <div
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8 font-mono text-xs transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+              className="enter-up inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8 font-mono text-xs"
               style={{
                 background: "rgba(0,255,148,0.08)",
                 border: "1px solid rgba(0,255,148,0.25)",
                 color: "#00FF94",
-                transitionDelay: "0.1s",
+                animationDelay: "0.05s",
               }}
             >
               <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
@@ -127,8 +122,8 @@ export default function Hero() {
 
             {/* Main title */}
             <div
-              className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: "0.2s" }}
+              className="enter-up"
+              style={{ animationDelay: "0.1s" }}
             >
               <h1
                 className="font-display text-6xl md:text-7xl lg:text-6xl leading-none mb-2"
@@ -147,8 +142,8 @@ export default function Hero() {
 
             {/* Typing role */}
             <div
-              className={`flex items-center gap-3 mb-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: "0.35s" }}
+              className="enter-up flex items-center gap-3 mb-8"
+              style={{ animationDelay: "0.18s" }}
             >
               <span
                 className="font-mono text-base md:text-lg"
@@ -167,8 +162,8 @@ export default function Hero() {
 
             {/* Description */}
             <p
-              className={`text-base leading-relaxed mb-10 max-w-lg transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ color: "#8E98A9", transitionDelay: "0.45s" }}
+              className="enter-up text-base leading-relaxed mb-10 max-w-lg"
+              style={{ color: "#8E98A9", animationDelay: "0.25s" }}
             >
               Diseño e implemento interfaces modernas y rápidas, y construyo el
               backend, las integraciones y las automatizaciones que las sostienen.
@@ -177,8 +172,8 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-wrap gap-4 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: "0.55s" }}
+              className="enter-up flex flex-wrap gap-4"
+              style={{ animationDelay: "0.32s" }}
             >
               <a
                 href="#experience"
@@ -221,8 +216,8 @@ export default function Hero() {
 
           {/* Right — Terminal card */}
           <div
-            className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}`}
-            style={{ transitionDelay: "0.5s" }}
+            className="enter-right"
+            style={{ animationDelay: "0.2s" }}
           >
             <div
               className="rounded-lg overflow-hidden animate-float"
@@ -246,7 +241,7 @@ export default function Hero() {
               </div>
 
               {/* Terminal body */}
-              <div className="p-6 font-mono text-sm leading-relaxed" style={{ color: "#A0AABA" }}>
+              <div className="px-6 py-4 font-mono text-sm leading-normal" style={{ color: "#A0AABA" }}>
                 <pre style={{ whiteSpace: "pre-wrap" }}>
                   {"{\n"}
                   {profile.map((f, i) => (
@@ -278,7 +273,7 @@ export default function Hero() {
             </div>
 
             {/* Stats below card */}
-            <div className="grid grid-cols-3 gap-3 mt-4">
+            <div className="grid grid-cols-3 gap-3 mt-4 pb-2">
               {[
                 { num: "+2", label: "Año exp." },
                 { num: "10+", label: "Proyectos" },
